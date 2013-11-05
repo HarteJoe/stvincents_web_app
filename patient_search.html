@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" type="text/css" href="patient_search.css"/>
+  <link rel="stylesheet" type="text/css" href="header.css"/>
+  <link rel="stylesheet" type="text/css" href="jquery/jquery.ui.all.css"/>
+  <!--[if lt IE 9]>
+    <script type="text/javascript" src="../js/html5shiv-printshiv.js"></script>
+  <![endif]-->
+  <script type="text/javascript" src="jquery/jquery-1.10.1.min.js"></script>
+  <script type="text/javascript" src="jquery/jquery.ui.core.js"></script>
+  <script type="text/javascript" src="jquery/jquery.ui.datepicker.js"></script>
+  <title>Patient Search</title>
+  <!--Self-built scripts at bottom-->
+</head>
+<body>
+<div id="body_wrapper">
+  
+  <!--The page header with patient details and photo-->
+  <header id="banner">
+    <img id="patient_photo" src="" alt="Patient's photo" width="100" height="100"/>
+    	<table id="patient_info" class="header_table">
+    	  <tr><th>Name:</th><td id="header_name"></td><th>DoB:</th><td id="header_dob"></td></tr>
+    	  <tr><th>Status:</th><td id="header_status"></td><th>Consultant:</th><td id="header_consultant"></td></tr>
+    	  <tr id="tr_bottom"><th>Latest Note:</th><td id="header_latest"></td><th>Note By:</th><td id="header_by"></td></tr> 	      
+    	</table>
+    <table id="user_info" class="header_table">
+      <tr><th>Logged in as:</th><td id="header_username"><?php echo $_SESSION['username'] ?></td></tr>
+    </table>
+    <img id="ucd_logo" src="images/ucd.gif" alt="UCD logo"/>
+    <nav id="options_nav">
+      <ul class="menu_bar">
+        <li class="menu_item"><a href="patient_search_page.php" title="Search for a patient">Search</a></li>
+        <li class="menu_item"><a href="../summary/summary_page.php" title="View the patient summary page">Summary</a></li>
+        <li class="menu_item"><a href="../new_patient/new_patient_page.php" title="Create a new patient">New Patient</a></li>
+        <li class="menu_item" id="logout_button"><a href="../php/logout.php" title="Log out from the application">Log Out</a></li>
+      </ul>
+    </nav>
+  </header>
+  <hr/>  
+  <!--END page header-->
+
+  <form id="patient_search">
+    <!--Left-hand sideof screen for selecting a patient status (current etc.)-->
+    <div id="patient_status">
+      <h2>Patient Status</h2>
+      <div class="status_radio">
+        <label for="radio_cur">Inpatient</label>
+        <input id="radio_cur" class="radio_button" type="radio" name="status" value="I"/>
+      </div>  
+      <div class="status_radio">
+        <label for="radio_dis">Outpatient</label>
+        <input id="radio_dis" class="radio_button" type="radio" name="status" value="O"/>
+      </div>    
+      <div class="status_radio">
+        <label for="radio_all">All</label>
+        <input id="radio_all" class="radio_button" type="radio" name="status" value="A" checked="checked"/>
+      </div>
+    </div>
+  
+    <!--Right-hand side textboxes for patient details-->
+    <div id="patient_details">
+      <h2>Patient Details</h2>
+      <div id="patient_details_left">
+        <div class="details_label">
+          <label for="text_mrn">MRN</label>
+        </div>
+        <div class="details_textbox">
+          <input id="text_mrn" class="textbox" type="text" name="mrn"/><br/>
+        </div>
+        <div class="details_label">
+          <label for="text_fname">First Name</label>
+        </div>
+        <div class="details_textbox">
+          <input id="text_fname" class="textbox" type="text" name="firstname"/><br/>
+        </div>
+        <div class="details_label">
+          <label for="text_lname">Last Name</label>
+        </div>
+        <div class="details_textbox">
+          <input id="text_lname" class="textbox" type="text" name="lastname"/><br/>
+        </div>
+      </div>
+      <!--Address and DoB to the right-->
+      <div id="patient_details_right">
+        <div class="details_label">
+          <label for="text_dob">Date of Birth</label>
+        </div>
+        <div class="details_textbox">
+          <input id="text_dob" class="textbox" type="text" name="dob"/><br/>
+        </div>
+        <div class="details_label">
+          <label for="text_addr">Address</label>     
+        </div>
+        <div class="details_textbox">
+          <input id="text_addr" class="textbox" type="text" name="address"/><br/>
+        </div>
+      </div>
+    
+      <div id="form_buttons">
+        <input id="search_button" type="submit" value="Search ..."/>
+        <input type="reset" value="Clear"/>
+      </div>    
+    </div>
+  </form>
+  
+  <div id="patient_table_div">
+    <table id="patient_table" class="results">
+      <thead>
+        <tr>
+          <th id="th_mrn">MRN</th><th id="th_fn">First Name</th><th id="th_ln">Last Name</th><th id="th_dob">DoB</th><th id="th_adr">Address</th>
+        </tr>
+      </thead>
+      <tbody id="table_body">
+        <!--AJAX will insert table rows here-->
+      </tbody>
+    </table>
+  </div>
+
+</div>
+  <script type="text/javascript">
+  $(function() {
+  	$('#text_dob').datepicker(
+	{ 
+		dateFormat: 'dd-mm-yy', 
+		changeMonth: true, 
+		changeYear: true, 
+		yearRange: 'c-100:c'    
+	});      
+  });
+  </script>
+  <script type="text/javascript" src="header.js"></script>
+  <script type="text/javascript" src="patient_search.js"></script>
+</body>
+</html>
+  
+  
+

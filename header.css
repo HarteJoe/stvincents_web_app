@@ -1,0 +1,108 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 760px;
+	width: 1300px;
+}
+
+header {
+	height: 100px;
+	background: #ffffff url('images/header_bg.jpg') repeat-x bottom left;
+	position: relative;
+}
+
+hr {
+	position: absolute:
+	bottom: 0;
+}
+
+header img {
+	float: left;
+}
+
+#ucd_logo {
+	height: 80%;
+	position: absolute;
+	top: 10%;
+	right: 2%;
+}
+
+#patient_info {
+	margin-top: 5px;
+	margin-left: 8px;
+	width: 45%;
+	float: left;
+	text-align: left;
+}
+
+td {
+	padding: 3px;
+}
+
+#user_info {
+	position: absolute;
+	right: 25%;
+	top: 1%;
+}
+
+#logout_nav {
+	position: absolute;
+	border: 1px solid #dee3e7;
+	border-radius: 2px;
+    background: #ffffff url('images/nav_bg.png') repeat-x bottom left; /* Image is transparent, so must use white bg */
+    font-family: Helvetica;
+    bottom: 0;
+    right: 8.5%;
+}	
+
+#options_nav {
+	position: absolute;
+	border: 1px solid #dee3e7;
+	border-radius: 2px;
+    background: #ffffff url('images/nav_bg.png') repeat-x bottom left; /* Image is transparent, so must use white bg */
+    font-family: Helvetica;
+    bottom: 0;
+    right: 20%;
+}	
+
+nav ul {
+	list-style: none;
+	margin: 0; /*Reset default values*/
+	padding: 0; 
+}
+
+nav li {
+	float: left;
+	border-right: 1px solid #dee3e7;
+}
+
+nav a {
+	padding: 5px 20px 2px 20px;
+	line-height: 30px;
+	color: #555555;
+	border-bottom: 4px solid #cacaca;
+	text-decoration: none;
+}
+
+nav a:hover {
+	background-color: #e6e6e6;
+	background-image: url('images/navbar_background.png');
+	background-repeat: repeat-x;
+	background-position: bottom left;
+}
+
+#patient_photo {
+	margin-left: 1px;
+	margin-top: 1px;
+	float: left;
+	height: 100%;
+	border: 1px solid black;
+}
+
+#patient_photo_div img {
+	height: 100%;
+}
+
+header th {
+	font-family: Helvetica, Arial;
+}

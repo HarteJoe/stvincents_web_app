@@ -1,0 +1,133 @@
+/*Reset defaults*/
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+
+h2 {
+	font-size: 12pt;
+	color: #6D929B;
+}
+
+#patient_status {
+	float: left;
+	margin-left: 12.5%;
+	margin-right: 12.5%;
+	width: 12.5%;
+	font-family: Arial;
+}
+
+input[type=radio] {
+    float: right;
+    width: 20px;
+    height: 20px;
+}
+
+#patient_details {
+	float: left;
+	width: 50%;
+	text-align: center;
+	margin-bottom: 3%;
+	font-family: Arial;
+	
+}
+
+#patient_details_left {
+	float: left;
+	width: 30%;
+	margin-left: 2.5%;
+}
+
+#patient_details_right {
+	float: left;
+	width: 30%;
+	margin-left: 2.5%;
+}
+
+.textbox {
+	width: 100%;
+}
+
+.details_label {
+	margin-top: 10%;
+}
+
+.status_radio {
+	margin-top: 28%;
+	font-family: Arial;
+	
+}
+
+#patient_status label {
+	font-size: 14pt;
+}
+
+#form_buttons {
+	float: left;
+	width: 30%;
+	margin-left: 2.5%;
+	margin-top: 5%;
+}
+
+#form_buttons input {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5%;
+	margin-bottom: 5%;
+	display: block;
+	width: 80%;
+}
+
+#patient_table_div {
+
+	clear: both;
+	border: 1px black solid;
+	overflow: scroll;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	height: 225px;
+}
+
+
+table.results {
+	width: 100%;
+	margin: auto;
+}
+
+table.results th {
+	font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12pt;
+	color: #6D929B;
+	border-right: 1px solid #C1DAD7;
+	border-bottom: 1px solid #C1DAD7;
+	border-top: 1px solid #C1DAD7;
+	letter-spacing: 2px;
+	text-align: center;
+	background: #CAE8EA url('images/bg_header.jpg') no-repeat;
+}
+
+/* Table headers */
+#th_mrn {
+	width: 12%;
+}
+
+#th_fn {
+	width: 20%;
+}
+
+#th_ln {
+	width: 20%;
+}
+
+#th_dob {
+	width: 10%;
+}
+
+#patient_table tr:hover {
+	background-color: #CAE8EA;
+}
+
+
