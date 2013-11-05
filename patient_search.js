@@ -1,6 +1,7 @@
 /* 
 ** @author: Josef Harte
-** @purpose: JavaScript for patient_search.html - using jQuery
+** @purpose: JavaScript for patient_search.html. Submits search fields to PHP file and populates table with results
+** Uses jQuery
 */
 
 /* Attach AJAX call to search form's submit button */
@@ -43,8 +44,7 @@ $('#patient_search').submit( function(event) {
 		}
 		
 		/* Select patient in table on click and send their MRN number to summary page.
-		Function is attached to the new table rows.
-		This also sends the MRN to patient_search.php who will create SESSION variable */
+		Function is attached to the new table rows */
 		$('#table_body tr').click( function(event) {
 			var mrn = $(this).find('td.results_mrn').html();
 			window.location = '../summary/summary_page.php?mrn=' + mrn;
